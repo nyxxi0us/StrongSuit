@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=3 uid="uid://rk4ossv6s3pd"]
+
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_1o5tv"]
+[ext_resource type="PackedScene" uid="uid://ct2n8erjfkm7x" path="res://GUI/FieldMenu/player_menu_card.tscn" id="1_fob32"]
+[ext_resource type="Script" uid="uid://bnewqwlt3yf8y" path="res://GUI/FieldMenu/player_equipment_window.gd" id="2_1cmya"]
+[ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="2_dub7e"]
+[ext_resource type="FontFile" uid="uid://b5da3j3tqxasx" path="res://GUI/FourPixelsFont.ttf" id="3_1o5tv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xu27b"]
+load_path = "res://.godot/imported/Card Upgrades.png-8344dc3095757ac3332fd4fd31480963.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu27b"]
+atlas = SubResource("CompressedTexture2D_xu27b")
+region = Rect2(0, 0, 8, 8)
+margin = Rect2(0, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oinm5"]
+atlas = SubResource("CompressedTexture2D_xu27b")
+region = Rect2(0, 0, 8, 8)
+margin = Rect2(0, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alasn"]
+atlas = SubResource("CompressedTexture2D_xu27b")
+region = Rect2(0, 0, 8, 8)
+margin = Rect2(0, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6tww"]
+atlas = SubResource("CompressedTexture2D_xu27b")
+region = Rect2(0, 0, 8, 8)
+margin = Rect2(0, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jurr4"]
+atlas = SubResource("CompressedTexture2D_xu27b")
+region = Rect2(0, 0, 8, 8)
+margin = Rect2(0, 0, 4, 0)
+
+[node name="PlayerEquipmentWindow" type="HBoxContainer"]
+clip_contents = true
+theme = ExtResource("1_1o5tv")
+theme_override_constants/separation = 7
+script = ExtResource("2_1cmya")
+
+[node name="PlayerMenuCard" parent="." instance=ExtResource("1_fob32")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+disabled = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "M.Hand"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "O.Hand"
+
+[node name="Label3" type="Label" parent="VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Helmet"
+
+[node name="Label4" type="Label" parent="VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Chest"
+
+[node name="Label5" type="Label" parent="VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Boots"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Equipped" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer" node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+size_flags_horizontal = 2
+script = ExtResource("2_dub7e")
+buttons_container = NodePath(".")
+
+[node name="Button" type="Button" parent="VBoxContainer2/HBoxContainer/Equipped"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_1o5tv")
+theme_override_font_sizes/font_size = 4
+text = "EquipmentName"
+icon = SubResource("AtlasTexture_xu27b")
+flat = true
+alignment = 0
+clip_text = true
+
+[node name="Button2" type="Button" parent="VBoxContainer2/HBoxContainer/Equipped"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_1o5tv")
+theme_override_font_sizes/font_size = 4
+text = "EquipmentName"
+icon = SubResource("AtlasTexture_oinm5")
+flat = true
+alignment = 0
+clip_text = true
+
+[node name="Button3" type="Button" parent="VBoxContainer2/HBoxContainer/Equipped"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_1o5tv")
+theme_override_font_sizes/font_size = 4
+text = "EquipmentName"
+icon = SubResource("AtlasTexture_alasn")
+flat = true
+alignment = 0
+clip_text = true
+
+[node name="Button4" type="Button" parent="VBoxContainer2/HBoxContainer/Equipped"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_1o5tv")
+theme_override_font_sizes/font_size = 4
+text = "EquipmentName"
+icon = SubResource("AtlasTexture_p6tww")
+flat = true
+alignment = 0
+clip_text = true
+
+[node name="Button5" type="Button" parent="VBoxContainer2/HBoxContainer/Equipped"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_1o5tv")
+theme_override_font_sizes/font_size = 4
+text = "EquipmentName"
+icon = SubResource("AtlasTexture_jurr4")
+flat = true
+alignment = 0
+clip_text = true
+
+[connection signal="player_changed" from="PlayerMenuCard" to="." method="_on_player_changed"]

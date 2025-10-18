@@ -1,0 +1,180 @@
+[gd_scene load_steps=6 format=3 uid="uid://bes0ia2u0stq5"]
+
+[ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="1_2oddd"]
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_yuj0a"]
+[ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="2_yuj0a"]
+[ext_resource type="Script" uid="uid://bed11dhe8uqgn" path="res://spell_shop_middle.gd" id="3_u3tj3"]
+[ext_resource type="PackedScene" uid="uid://dek2hbk6emy24" path="res://GUI/FieldMenu/spell_button.tscn" id="5_46waj"]
+
+[node name="SpellShopMiddle" type="NinePatchRect"]
+custom_minimum_size = Vector2(304, 105)
+offset_right = 32.0
+offset_bottom = 32.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.81
+theme = ExtResource("1_yuj0a")
+texture = ExtResource("1_2oddd")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("3_u3tj3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Spells" type="VBoxContainer" parent="MarginContainer/HBoxContainer" node_paths=PackedStringArray("buttons_container")]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("2_yuj0a")
+buttons_container = NodePath(".")
+
+[node name="SpellButton" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="SpellButton2" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="SpellButton3" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="SpellButton4" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="SpellButton5" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="SpellButton6" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="SpellButton7" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="SpellButton8" parent="MarginContainer/HBoxContainer/Spells" instance=ExtResource("5_46waj")]
+layout_mode = 2
+disabled = false
+icon = null
+
+[node name="Levels" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Level1Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Level2Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Level3Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Level4Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Level5Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Level6Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Level7Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Level8Label" type="Label" parent="MarginContainer/HBoxContainer/Levels"]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="Price" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 1
+
+[node name="Price1Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Price2Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Price3Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Price4Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Price5Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Price6Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Price7Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Price8Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+layout_mode = 2
+text = "999"
+
+[node name="Party" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="Ronin" type="Label" parent="MarginContainer/HBoxContainer/Party"]
+layout_mode = 2
+text = "Ronin"
+
+[node name="Stowaway" type="Label" parent="MarginContainer/HBoxContainer/Party"]
+layout_mode = 2
+text = "Stowaway"
+
+[node name="Mercenary" type="Label" parent="MarginContainer/HBoxContainer/Party"]
+layout_mode = 2
+text = "Mercenary"
+
+[node name="Bastard" type="Label" parent="MarginContainer/HBoxContainer/Party"]
+layout_mode = 2
+text = "Bastard"

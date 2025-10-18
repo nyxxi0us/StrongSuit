@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://yu0cfflgv3l4"]
+
+[ext_resource type="Script" uid="uid://bxbi4lck624lr" path="res://Scripts/Data Objects/card_data.gd" id="1_3t3fl"]
+[ext_resource type="Script" uid="uid://b7vrhm3arjq3f" path="res://Scenes/Cards/defend_action.gd" id="1_yhdgs"]
+
+[resource]
+script = ExtResource("1_3t3fl")
+card_rank = -1
+card_suit = 4
+suit_damage = -1
+suit_defense = -1
+suit_bonus = -1
+actions = Array[GDScript]([ExtResource("1_yhdgs")])
+metadata/_custom_type_script = "uid://bxbi4lck624lr"

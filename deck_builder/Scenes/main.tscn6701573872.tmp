@@ -1,0 +1,219 @@
+[gd_scene load_steps=13 format=3 uid="uid://fopytg4v62xl"]
+
+[ext_resource type="Script" uid="uid://cjmui1aj4iofw" path="res://Scripts/main.gd" id="1_21xkr"]
+[ext_resource type="Texture2D" uid="uid://c4hpkq42dkqy8" path="res://Sprites/background.png" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://oaqw17w4fn0v" path="res://Scenes/deck_n_hand.tscn" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://8r5prmt3hi8g" path="res://Sprites/Party/Bastard.png" id="2_jjvhh"]
+[ext_resource type="Script" uid="uid://bk78s03wxaq2k" path="res://Scripts/actor.gd" id="2_kry3j"]
+[ext_resource type="Texture2D" uid="uid://bm8whirk5ww8d" path="res://Sprites/Enemies/Alp.png" id="3_kry3j"]
+[ext_resource type="Texture2D" uid="uid://doihjv1dgbhn2" path="res://Sprites/Shield Symbol.png" id="5_6bp64"]
+[ext_resource type="Script" uid="uid://kwcqaxypxvba" path="res://Scenes/game_controller.gd" id="8_344ge"]
+[ext_resource type="Texture2D" uid="uid://bibx5hijugwh6" path="res://Sprites/Deck_Icon.png" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://br0yu3ggq7bb5" path="res://Sprites/Deck_Icon_Presses.png" id="10_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://bhjgni6ndhj7" path="res://Sprites/Deck_Icon_Hovered.png" id="11_6iyac"]
+[ext_resource type="PackedScene" uid="uid://b8oo4lq41a6mc" path="res://Scenes/Cards/air_suit.tscn" id="12_6iyac"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_21xkr")
+
+[node name="GameScreen" type="Node2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="GameScreen"]
+offset_right = 663.0
+offset_bottom = 400.0
+texture = ExtResource("1_bo1nx")
+stretch_mode = 5
+
+[node name="PlayerActor" type="Node2D" parent="GameScreen"]
+position = Vector2(224, 152)
+script = ExtResource("2_kry3j")
+
+[node name="Sprite" type="Sprite2D" parent="GameScreen/PlayerActor"]
+texture = ExtResource("2_jjvhh")
+flip_h = true
+
+[node name="Health" type="ProgressBar" parent="GameScreen/PlayerActor"]
+modulate = Color(0.0330675, 1, 0.0817986, 1)
+custom_minimum_size = Vector2(50, 5)
+offset_left = -24.0
+offset_top = 32.0
+offset_right = 26.0
+offset_bottom = 37.0
+step = 1.0
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Armor" type="Sprite2D" parent="GameScreen/PlayerActor"]
+position = Vector2(-32, 32)
+texture = ExtResource("5_6bp64")
+
+[node name="ArmorAmount" type="Label" parent="GameScreen/PlayerActor/Armor"]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 36.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="EnemyActor" type="Node2D" parent="GameScreen"]
+position = Vector2(416, 152)
+script = ExtResource("2_kry3j")
+
+[node name="Sprite" type="Sprite2D" parent="GameScreen/EnemyActor"]
+texture = ExtResource("3_kry3j")
+
+[node name="Health" type="ProgressBar" parent="GameScreen/EnemyActor"]
+modulate = Color(0.0330675, 1, 0.0817986, 1)
+custom_minimum_size = Vector2(50, 5)
+offset_left = -24.0
+offset_top = 32.0
+offset_right = 26.0
+offset_bottom = 37.0
+step = 1.0
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Armor" type="Sprite2D" parent="GameScreen/EnemyActor"]
+position = Vector2(-32, 32)
+texture = ExtResource("5_6bp64")
+
+[node name="ArmorAmount" type="Label" parent="GameScreen/EnemyActor/Armor"]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 36.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="GameController" type="Node2D" parent="."]
+script = ExtResource("8_344ge")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 26.0
+offset_right = 170.0
+offset_bottom = 229.0
+alignment = 1
+
+[node name="Damage 1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Deal 1 Dmg"
+
+[node name="Damage 3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Deal 3 Dmg"
+
+[node name="EndTurn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "End Turn"
+
+[node name="Energy" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "10"
+
+[node name="DeckButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("9_ynf5e")
+texture_pressed = ExtResource("10_d1ilt")
+texture_hover = ExtResource("11_6iyac")
+stretch_mode = 4
+
+[node name="Container" type="Container" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DeckNHand" parent="VBoxContainer/Container" instance=ExtResource("2_8gbba")]
+position = Vector2(-1, -84)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DefeatColor" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.478431, 0.0196078, 0.0196078, 0.584314)
+
+[node name="DefeatText" type="Label" parent="CanvasLayer/DefeatColor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DEFEAT"
+
+[node name="VictoryColor" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0196078, 0.478431, 0.166802, 0.584314)
+
+[node name="VictoryText" type="Label" parent="CanvasLayer/VictoryColor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "VICTORY"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardContainer" type="MarginContainer" parent="CanvasLayer/HFlowContainer"]
+custom_minimum_size = Vector2(85, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AirSuit" parent="CanvasLayer/HFlowContainer/CardContainer" instance=ExtResource("12_6iyac")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="pressed" from="VBoxContainer/Damage 1" to="." method="_on_damage_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Damage 3" to="." method="_on_damage_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/EndTurn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="VBoxContainer/DeckButton" to="." method="_on_deck_button_pressed"]
+[connection signal="card_activate" from="VBoxContainer/Container/DeckNHand" to="." method="_on_deck_n_hand_card_activate"]

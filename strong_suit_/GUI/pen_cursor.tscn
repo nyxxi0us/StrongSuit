@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://lwxqn4fauqg7"]
+
+[ext_resource type="Texture2D" uid="uid://secasc08lvn1" path="res://World/Art/Quill Pen Cursor.png" id="1_bhqdd"]
+[ext_resource type="Script" uid="uid://kjntmgpp85nf" path="res://GUI/pen_cursor.gd" id="2_anv31"]
+
+[node name="PenCursor" type="TextureRect"]
+offset_left = 16.0
+offset_top = 36.0
+offset_right = 32.0
+offset_bottom = 52.0
+texture = ExtResource("1_bhqdd")
+script = ExtResource("2_anv31")

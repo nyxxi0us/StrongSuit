@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://32k36safna3x"]
+
+[ext_resource type="Script" uid="uid://cjw2biynewf2a" path="res://World/sprite_sheet_animation.gd" id="1_44gum"]
+[ext_resource type="Texture2D" uid="uid://8y3phedanoxk" path="res://World/Actors/characters.tres" id="1_x6bwo"]
+
+[node name="SpriteSheetAnimation" type="Sprite2D"]
+texture = ExtResource("1_x6bwo")
+script = ExtResource("1_44gum")
+
+[node name="FrameAdvanceTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[connection signal="timeout" from="FrameAdvanceTimer" to="." method="_on_frame_advance_timer_timeout"]

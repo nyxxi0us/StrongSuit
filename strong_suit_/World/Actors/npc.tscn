@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://pwsf188t1flw"]
+
+[ext_resource type="Script" uid="uid://33pi1becktc6" path="res://World/Actors/npc.gd" id="1_paqw0"]
+[ext_resource type="Texture2D" uid="uid://7n333pv4amlj" path="res://World/Art/Characters.png" id="2_8no4k"]
+[ext_resource type="Texture2D" uid="uid://rhh354v1pyhn" path="res://World/Art/Player Map Mask.png" id="3_8no4k"]
+[ext_resource type="PackedScene" uid="uid://32k36safna3x" path="res://World/sprite_sheet_animation.tscn" id="4_bpvst"]
+[ext_resource type="Shape2D" uid="uid://coyh1a7v18qlv" path="res://Items/Actor.tres" id="5_lxjd4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paqw0"]
+resource_local_to_scene = true
+atlas = ExtResource("2_8no4k")
+region = Rect2(0, 0, 16, 16)
+
+[node name="NPC" type="CharacterBody2D"]
+position = Vector2(0, -8)
+script = ExtResource("1_paqw0")
+
+[node name="Mask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(0, 3)
+texture = ExtResource("3_8no4k")
+
+[node name="SpriteSheetAnimation" parent="Mask" instance=ExtResource("4_bpvst")]
+position = Vector2(0, -4)
+texture = SubResource("AtlasTexture_paqw0")
+frame_offset = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = ExtResource("5_lxjd4")
+
+[node name="MoveTimer" type="Timer" parent="."]
+
+[node name="WaitTimer" type="Timer" parent="."]
+
+[node name="TalkTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timeout"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
+[connection signal="timeout" from="TalkTimer" to="." method="_on_wait_timer_timeout"]

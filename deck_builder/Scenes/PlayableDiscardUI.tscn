@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dftngpjg5x6gx"]
+
+[ext_resource type="Texture2D" uid="uid://7plmxqsj2qt3" path="res://Sprites/BaseCard.png" id="1_c7e11"]
+[ext_resource type="Script" uid="uid://bgq77ihoym88k" path="res://Scripts/Data Objects/playable_discard_ui.gd" id="2_ssesj"]
+
+[node name="PlayableDiscard" type="TextureButton"]
+texture_normal = ExtResource("1_c7e11")
+script = ExtResource("2_ssesj")

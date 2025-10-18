@@ -1,0 +1,178 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0bgknrkpklqu"]
+
+[ext_resource type="PackedScene" uid="uid://1pjkocxmqavc" path="res://GUI/fullscreen_gui_template.tscn" id="1_udxl0"]
+[ext_resource type="Script" uid="uid://bwlh8mbtumrtv" path="res://GUI/FieldMenu/sub_menu_items.gd" id="2_udxl0"]
+[ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="3_cvuuh"]
+[ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="4_us4a8"]
+[ext_resource type="PackedScene" uid="uid://bkptlvsj7uc71" path="res://GUI/FieldMenu/item_label.tscn" id="5_stpml"]
+
+[node name="SubMenuItems" instance=ExtResource("1_udxl0")]
+custom_minimum_size = Vector2(320, 180)
+script = ExtResource("2_udxl0")
+
+[node name="Options" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE" index="0" node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.49
+texture = ExtResource("3_cvuuh")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+script = ExtResource("4_us4a8")
+buttons_container = NodePath("HBoxContainer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PUT_MENU_HERE/Options" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Label" type="Button" parent="MarginContainer/PUT_MENU_HERE/Options/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Use"
+flat = true
+alignment = 0
+
+[node name="Label2" type="Button" parent="MarginContainer/PUT_MENU_HERE/Options/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Sort"
+flat = true
+alignment = 0
+
+[node name="Label3" type="Button" parent="MarginContainer/PUT_MENU_HERE/Options/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Remove"
+flat = true
+alignment = 0
+
+[node name="Title" type="Label" parent="MarginContainer/PUT_MENU_HERE/Options" index="1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "Items"
+vertical_alignment = 1
+
+[node name="Middle" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.81
+texture = ExtResource("3_cvuuh")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/Middle" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="ItemsMenu" type="GridContainer" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer" index="0" node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/h_separation = 14
+columns = 2
+script = ExtResource("4_us4a8")
+buttons_container = NodePath(".")
+
+[node name="ItemLabel" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="0" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel2" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="1" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel3" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="2" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel4" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="3" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel5" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="4" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel6" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="5" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel7" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="6" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel8" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="7" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel9" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="8" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel10" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="9" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel11" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="10" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel12" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="11" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel13" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="12" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="ItemLabel14" parent="MarginContainer/PUT_MENU_HERE/Middle/MarginContainer/HBoxContainer/ItemsMenu" index="13" instance=ExtResource("5_stpml")]
+layout_mode = 2
+
+[node name="Bottom" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.24
+texture = ExtResource("3_cvuuh")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/Bottom" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/PUT_MENU_HERE/Bottom/MarginContainer" index="0"]
+layout_mode = 2
+text = "Item Description"

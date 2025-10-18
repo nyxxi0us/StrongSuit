@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2xc0cfu7eey8"]
+
+[ext_resource type="Texture2D" uid="uid://7plmxqsj2qt3" path="res://Sprites/BaseCard.png" id="1_0qqmn"]
+[ext_resource type="Script" uid="uid://d3yn2k7r1spto" path="res://Scripts/card.gd" id="1_eumee"]
+[ext_resource type="LabelSettings" uid="uid://dl12kik6oe3sp" path="res://card_label.tres" id="3_e6po8"]
+[ext_resource type="Texture2D" uid="uid://c1el1bxtysgxc" path="res://Sprites/Suit Symbols.png" id="4_eumee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eumee"]
+size = Vector2(66, 102)
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_eumee")
+card_rank = 3
+card_suit = 0
+suit_damage = 5
+suit_defense = 4
+suit_bonus = 1
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+position = Vector2(33, 51)
+texture = ExtResource("1_0qqmn")
+
+[node name="RankDisplay" type="Node2D" parent="BaseCardSprite"]
+
+[node name="RankTL" type="Label" parent="BaseCardSprite/RankDisplay"]
+self_modulate = Color(0.698039, 0.133333, 0.133333, 1)
+offset_left = -31.0
+offset_top = -48.0
+offset_right = -15.0
+offset_bottom = -32.0
+rotation = 0.00116388
+text = "5"
+label_settings = ExtResource("3_e6po8")
+
+[node name="RankBR" type="Label" parent="BaseCardSprite/RankDisplay"]
+self_modulate = Color(0.698039, 0.133333, 0.133333, 1)
+offset_left = 30.0
+offset_top = 48.0
+offset_right = 46.0
+offset_bottom = 64.0
+rotation = 0.00116388
+scale = Vector2(-1, -1)
+text = "5"
+label_settings = ExtResource("3_e6po8")
+
+[node name="SuitDisplay" type="Node2D" parent="BaseCardSprite"]
+
+[node name="Odd_even" type="Sprite2D" parent="BaseCardSprite/SuitDisplay"]
+texture = ExtResource("4_eumee")
+hframes = 5
+
+[node name="Area2D" type="Area2D" parent="BaseCardSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseCardSprite/Area2D"]
+shape = SubResource("RectangleShape2D_eumee")
+
+[connection signal="mouse_entered" from="BaseCardSprite/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="BaseCardSprite/Area2D" to="." method="_on_area_2d_mouse_exited"]

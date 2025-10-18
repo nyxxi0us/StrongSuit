@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr1jvcxpckjwk"]
+
+[ext_resource type="Script" uid="uid://ci17hld6cnmwq" path="res://World/Actors/shopkeep.gd" id="1_dwotc"]
+[ext_resource type="Texture2D" uid="uid://rhh354v1pyhn" path="res://World/Art/Player Map Mask.png" id="2_0km11"]
+[ext_resource type="PackedScene" uid="uid://32k36safna3x" path="res://World/sprite_sheet_animation.tscn" id="3_07qlp"]
+[ext_resource type="Texture2D" uid="uid://7n333pv4amlj" path="res://World/Art/Characters.png" id="4_oc72m"]
+[ext_resource type="PackedScene" uid="uid://dr2oyd6o2b1ht" path="res://GUI/shop_gui.tscn" id="5_0km11"]
+[ext_resource type="Script" uid="uid://rkrs3p3k8jmh" path="res://World/interaction_range.gd" id="5_07qlp"]
+[ext_resource type="Shape2D" uid="uid://coyh1a7v18qlv" path="res://Items/Actor.tres" id="5_oc72m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paqw0"]
+resource_local_to_scene = true
+atlas = ExtResource("4_oc72m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0km11"]
+radius = 24.0832
+
+[node name="Shopkeep" type="CharacterBody2D"]
+position = Vector2(0, -8)
+script = ExtResource("1_dwotc")
+
+[node name="Mask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(0, 3)
+texture = ExtResource("2_0km11")
+
+[node name="SpriteSheetAnimation" parent="Mask" instance=ExtResource("3_07qlp")]
+position = Vector2(0, -4)
+texture = SubResource("AtlasTexture_paqw0")
+frame_offset = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = ExtResource("5_oc72m")
+
+[node name="InteractionRange" type="Area2D" parent="."]
+collision_mask = 3
+script = ExtResource("5_07qlp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
+shape = SubResource("CircleShape2D_0km11")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ShopGui" parent="CanvasLayer" instance=ExtResource("5_0km11")]
+visible = false
+
+[connection signal="interact_requested" from="InteractionRange" to="." method="_on_interaction_range_interact_requested"]

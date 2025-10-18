@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://oaqw17w4fn0v"]
+
+[ext_resource type="Script" uid="uid://bvagu4lurw0kt" path="res://Scripts/deck_n_hand.gd" id="1_rbcen"]
+[ext_resource type="PackedScene" uid="uid://clvnj4hg84yl8" path="res://Scenes/Hand.tscn" id="2_qvfr2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qvfr2"]
+load_path = "res://.godot/imported/Suit Symbols.png-a9842101822bb0eaad356a5cae9268ab.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sl2q"]
+atlas = SubResource("CompressedTexture2D_qvfr2")
+region = Rect2(16, 0, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrt20"]
+atlas = SubResource("CompressedTexture2D_qvfr2")
+region = Rect2(0, 0, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y0ql"]
+atlas = SubResource("CompressedTexture2D_qvfr2")
+region = Rect2(32, 0, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohstd"]
+atlas = SubResource("CompressedTexture2D_qvfr2")
+region = Rect2(48, 0, 16, 22)
+
+[node name="DeckNHand" type="Node2D"]
+script = ExtResource("1_rbcen")
+
+[node name="Hand" parent="." instance=ExtResource("2_qvfr2")]
+position = Vector2(352, 1080)
+hand_radius = 1000
+card_angle = -90.0
+max_spread_angle = 2.5
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1.0
+offset_right = 125.0
+offset_bottom = 30.0
+text = "Create"
+icon = SubResource("AtlasTexture_6sl2q")
+
+[node name="Button2" type="Button" parent="."]
+offset_top = 32.0
+offset_right = 124.0
+offset_bottom = 62.0
+text = "Create"
+icon = SubResource("AtlasTexture_wrt20")
+
+[node name="Button3" type="Button" parent="."]
+offset_top = 64.0
+offset_right = 124.0
+offset_bottom = 94.0
+text = "Create"
+icon = SubResource("AtlasTexture_6y0ql")
+
+[node name="Button4" type="Button" parent="."]
+offset_top = 96.0
+offset_right = 124.0
+offset_bottom = 126.0
+text = "Create"
+icon = SubResource("AtlasTexture_ohstd")
+
+[connection signal="card_focused" from="Hand" to="." method="_on_hand_card_focused"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

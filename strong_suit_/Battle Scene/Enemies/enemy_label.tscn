@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8bl304rkrbqx"]
+
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_urmiq"]
+[ext_resource type="Script" uid="uid://cx4chyj60grk4" path="res://Battle Scene/Enemies/enemy_label.gd" id="1_yup3v"]
+
+[node name="EnemyLabel" type="HBoxContainer"]
+size_flags_vertical = 0
+theme = ExtResource("1_urmiq")
+script = ExtResource("1_yup3v")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Name"
+
+[node name="Count" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "00"

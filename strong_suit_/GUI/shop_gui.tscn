@@ -1,0 +1,161 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr2oyd6o2b1ht"]
+
+[ext_resource type="PackedScene" uid="uid://1pjkocxmqavc" path="res://GUI/fullscreen_gui_template.tscn" id="1_fofa5"]
+[ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="2_buwme"]
+[ext_resource type="Script" uid="uid://cbtw71ft7fa0m" path="res://GUI/shop_gui.gd" id="2_fofa5"]
+[ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="3_buwme"]
+[ext_resource type="Script" uid="uid://deyvdmi1i6buq" path="res://World/gold.gd" id="5_njnrn"]
+[ext_resource type="PackedScene" uid="uid://dne8n0xt3lwlp" path="res://items_shop_middle.tscn" id="6_h3snf"]
+[ext_resource type="PackedScene" uid="uid://bes0ia2u0stq5" path="res://spell_shop_middle.tscn" id="7_4imfq"]
+
+[node name="ShopGUI" instance=ExtResource("1_fofa5")]
+script = ExtResource("2_fofa5")
+
+[node name="Top" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE" index="0"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_buwme")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/Top" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PUT_MENU_HERE/Top/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.45
+theme_override_constants/separation = 1
+
+[node name="ShopType" type="Label" parent="MarginContainer/PUT_MENU_HERE/Top/MarginContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.51
+text = "Dealer"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ShopIntro" type="Label" parent="MarginContainer/PUT_MENU_HERE/Top/MarginContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "To sustain you on your journey..."
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Options" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE" index="1" node_paths=PackedStringArray("buttons_container")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_buwme")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+script = ExtResource("3_buwme")
+buttons_container = NodePath("HBoxContainer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PUT_MENU_HERE/Options" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 2
+
+[node name="Label" type="Button" parent="MarginContainer/PUT_MENU_HERE/Options/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Buy"
+flat = true
+alignment = 0
+
+[node name="Label2" type="Button" parent="MarginContainer/PUT_MENU_HERE/Options/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Sell"
+flat = true
+alignment = 0
+
+[node name="Label3" type="Button" parent="MarginContainer/PUT_MENU_HERE/Options/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Exit"
+flat = true
+alignment = 0
+
+[node name="Gold" type="Label" parent="MarginContainer/PUT_MENU_HERE/Options" index="1"]
+layout_mode = 2
+offset_left = 231.0
+offset_top = 6.0
+offset_right = 304.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+text = "999 GP"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_njnrn")
+
+[node name="ItemsShopMiddle" parent="MarginContainer/PUT_MENU_HERE" index="2" instance=ExtResource("6_h3snf")]
+visible = false
+layout_mode = 2
+
+[node name="SpellShopMiddle" parent="MarginContainer/PUT_MENU_HERE" index="3" instance=ExtResource("7_4imfq")]
+visible = false
+layout_mode = 2
+
+[node name="Bottom" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE" index="4"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 10
+texture = ExtResource("2_buwme")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/Bottom" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/PUT_MENU_HERE/Bottom/MarginContainer" index="0"]
+layout_mode = 2
+text = "Item Description"
+
+[connection signal="on_menu_button_focused" from="MarginContainer/PUT_MENU_HERE/ItemsShopMiddle" to="." method="_on_shop_menu_button_focused"]
+[connection signal="on_menu_button_pressed" from="MarginContainer/PUT_MENU_HERE/ItemsShopMiddle" to="." method="_on_shop_menu_button_pressed"]
+[connection signal="on_menu_button_focused" from="MarginContainer/PUT_MENU_HERE/SpellShopMiddle" to="." method="_on_shop_menu_button_focused"]
+[connection signal="on_menu_button_pressed" from="MarginContainer/PUT_MENU_HERE/SpellShopMiddle" to="." method="_on_shop_menu_button_focused"]

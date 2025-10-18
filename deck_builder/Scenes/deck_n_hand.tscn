@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://oaqw17w4fn0v"]
+
+[ext_resource type="Script" uid="uid://bvagu4lurw0kt" path="res://Scripts/deck_n_hand.gd" id="1_rbcen"]
+[ext_resource type="PackedScene" uid="uid://clvnj4hg84yl8" path="res://Scenes/Hand.tscn" id="2_qvfr2"]
+
+[node name="DeckNHand" type="Node2D"]
+script = ExtResource("1_rbcen")
+
+[node name="Hand" parent="." instance=ExtResource("2_qvfr2")]
+position = Vector2(352, 1059)
+hand_radius = 1000
+card_angle = -90.0
+max_spread_angle = 2.5
+
+[node name="CreateDeck" type="Button" parent="."]
+offset_top = 144.0
+offset_right = 184.0
+offset_bottom = 168.0
+text = "Create Deck"
+
+[connection signal="card_activate" from="Hand" to="." method="_on_hand_card_activate"]
+[connection signal="pressed" from="CreateDeck" to="." method="_on_create_deck_pressed"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6r0i17gn0dgk"]
+
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_4811o"]
+[ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="1_f8e0b"]
+[ext_resource type="Script" uid="uid://cbsx4qdmh1x62" path="res://Battle Scene/Player/player_info_card.gd" id="2_g8bix"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k62dt"]
+atlas = ExtResource("1_f8e0b")
+region = Rect2(8, 3, 32, 37)
+
+[node name="PlayerInfoCard" type="TextureRect" groups=["player_cards"]]
+custom_minimum_size = Vector2(0, 60)
+offset_right = 36.0
+offset_bottom = 61.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_k62dt")
+stretch_mode = 1
+script = ExtResource("2_g8bix")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource("1_4811o")
+
+[node name="Name" type="Label" parent="MarginContainer/Text"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Name"
+
+[node name="Health" type="Label" parent="MarginContainer/Text"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "00"
+
+[node name="Mana" type="Label" parent="MarginContainer/Text"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "000"
+
+[node name="Level" type="Label" parent="MarginContainer/Text"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "000"
