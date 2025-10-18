@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="5_0k4wn"]
 [ext_resource type="PackedScene" uid="uid://d0bgknrkpklqu" path="res://GUI/FieldMenu/sub_menu_items.tscn" id="6_1lxaq"]
 [ext_resource type="Script" uid="uid://deyvdmi1i6buq" path="res://World/gold.gd" id="6_j5v2v"]
-[ext_resource type="Script" path="res://area.gd" id="7_o5rdq"]
+[ext_resource type="Script" uid="uid://bjsbbw046n16r" path="res://area.gd" id="7_o5rdq"]
 [ext_resource type="PackedScene" uid="uid://bpo3nionteggq" path="res://GUI/FieldMenu/sub_menu_equip.tscn" id="8_32kvd"]
 [ext_resource type="PackedScene" uid="uid://dkpakmscr0k5s" path="res://GUI/FieldMenu/sub_menu_tricks.tscn" id="9_f61tj"]
 [ext_resource type="PackedScene" uid="uid://x8v5sn3r48ds" path="res://GUI/FieldMenu/sub_menu_status.tscn" id="11_dmmdx"]

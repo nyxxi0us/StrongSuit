@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://btycd5gl1t2ii"]
 
 [ext_resource type="PackedScene" uid="uid://b858s7co2xgay" path="res://World/overworld.tscn" id="1_80nbo"]
-[ext_resource type="Script" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://bm3ej7awxcf4i" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://c61vpv00601s4" path="res://Battle Scene/Menu Assets/dialogue_box.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cnhwtxwawsw7d" path="res://GUI/fade_transition.tscn" id="3_feb5d"]
 [ext_resource type="Theme" uid="uid://dmgmv7cyjhksv" path="res://Battle Scene/Menu Assets/Main.tres" id="4_hve3p"]
