@@ -13,13 +13,13 @@ func set_items(_inventory: Inventory) -> Array:
 	inventory = _inventory
 	var items = inventory.get_items()
 	var items_size: int = items.size()
-	var item_buttons: Array = items_menu.get_buttons()
+	var item_buttons: Array[ItemLabel] = items_menu.get_buttons()
 	for i in range(item_buttons.size()):
 		var item_button: ItemLabel = item_buttons[i]
 		var item: Item = null
-		if i<items.size():
+		if i < items.size():
 			item = items[i]
-		item_button.set_item(item,true)
+		item_button.set_item(item, true)
 	return items
 
 func update_shop_labels(current_item: Item) -> void:
