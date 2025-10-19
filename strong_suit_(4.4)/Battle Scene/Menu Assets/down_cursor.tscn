@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxc68pcbomkcl"]
+
+[ext_resource type="Texture2D" uid="uid://bss8t0svpuodv" path="res://Battle Scene/Art/Down_Cursor.png" id="1_5hmv2"]
+[ext_resource type="Script" uid="uid://qo600xcdds5x" path="res://Battle Scene/Menu Assets/down_cursor.gd" id="2_1nk34"]
+
+[node name="DownCursor" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -304.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5hmv2")
+stretch_mode = 2
+script = ExtResource("2_1nk34")
+
+[node name="Frames advance" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Frames advance" to="." method="_on_timer_timeout"]

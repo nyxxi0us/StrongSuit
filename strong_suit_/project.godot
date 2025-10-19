@@ -13,7 +13,7 @@ config_version=5
 config/name="Strong Suit"
 config/description="A roguelike deckbuilder JRPG told from a bar table between medieval deserters around a game of poker."
 run/main_scene="uid://btycd5gl1t2ii"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://c2e01b06meui4"
 
 [autoload]

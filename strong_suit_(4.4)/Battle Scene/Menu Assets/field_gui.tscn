@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw2r31efjwx0o"]
+
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_wf8by"]
+[ext_resource type="PackedScene" uid="uid://cq582jq5i0fib" path="res://Battle Scene/Menu Assets/window_default.tscn" id="2_6gtpr"]
+[ext_resource type="PackedScene" uid="uid://bfo811v50iycu" path="res://Battle Scene/Player/player_button_info.tscn" id="3_8f0n2"]
+[ext_resource type="PackedScene" uid="uid://kxj584girrcc" path="res://Battle Scene/Menu Assets/stat_button.tscn" id="4_pni6y"]
+
+[node name="FieldGui" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("1_wf8by")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="WindowDefault" parent="VBoxContainer" instance=ExtResource("2_6gtpr")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/WindowDefault"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/WindowDefault/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="BattlePlayerInfo" parent="VBoxContainer/WindowDefault/MarginContainer/GridContainer" instance=ExtResource("3_8f0n2")]
+layout_mode = 2
+script = null
+
+[node name="BattlePlayerInfo2" parent="VBoxContainer/WindowDefault/MarginContainer/GridContainer" instance=ExtResource("3_8f0n2")]
+layout_mode = 2
+script = null
+
+[node name="BattlePlayerInfo3" parent="VBoxContainer/WindowDefault/MarginContainer/GridContainer" instance=ExtResource("3_8f0n2")]
+layout_mode = 2
+script = null
+
+[node name="BattlePlayerInfo4" parent="VBoxContainer/WindowDefault/MarginContainer/GridContainer" instance=ExtResource("3_8f0n2")]
+layout_mode = 2
+script = null
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WindowDefault2" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_6gtpr")]
+custom_minimum_size = Vector2(90, 48)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/WindowDefault2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/WindowDefault2/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/WindowDefault2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/WindowDefault2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/WindowDefault2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer/WindowDefault2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WindowDefault3" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_6gtpr")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/WindowDefault3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/WindowDefault3/MarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="StatButton" parent="VBoxContainer/HBoxContainer/WindowDefault3/MarginContainer/GridContainer" instance=ExtResource("4_pni6y")]
+layout_mode = 2
+
+[node name="StatButton2" parent="VBoxContainer/HBoxContainer/WindowDefault3/MarginContainer/GridContainer" instance=ExtResource("4_pni6y")]
+layout_mode = 2
+
+[node name="StatButton3" parent="VBoxContainer/HBoxContainer/WindowDefault3/MarginContainer/GridContainer" instance=ExtResource("4_pni6y")]
+layout_mode = 2
+
+[node name="StatButton4" parent="VBoxContainer/HBoxContainer/WindowDefault3/MarginContainer/GridContainer" instance=ExtResource("4_pni6y")]
+layout_mode = 2

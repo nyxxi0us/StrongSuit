@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dek2hbk6emy24"]
+
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_4djvl"]
+[ext_resource type="Script" uid="uid://0hgsfymnupyx" path="res://GUI/FieldMenu/spell_button.gd" id="3_2nl4a"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gfl5q"]
+load_path = "res://.godot/imported/checkbox_icons.png-cb28ec61a73bb9c0ac431edd0b7d23b7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nfbr"]
+atlas = SubResource("CompressedTexture2D_gfl5q")
+region = Rect2(0, 0, 6, 6)
+
+[node name="SpellButton" type="Button"]
+theme = ExtResource("1_4djvl")
+disabled = true
+text = "SpellName"
+icon = SubResource("AtlasTexture_6nfbr")
+flat = true
+alignment = 0
+script = ExtResource("3_2nl4a")

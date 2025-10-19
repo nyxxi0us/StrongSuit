@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvupw2defk84p"]
+
+[ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="1_j8qpj"]
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_qotlf"]
+[ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="2_qotlf"]
+
+[node name="ConfirmationWindow" type="NinePatchRect" node_paths=PackedStringArray("buttons_container")]
+custom_minimum_size = Vector2(120, 45)
+offset_right = 16.0
+offset_bottom = 16.0
+size_flags_vertical = 3
+theme = ExtResource("1_qotlf")
+texture = ExtResource("1_j8qpj")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+script = ExtResource("2_qotlf")
+buttons_container = NodePath("MarginContainer/VBoxContainer2/VBoxContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Are you sure?"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="Yes" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Yes"
+flat = true
+alignment = 0
+
+[node name="No" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "No"
+flat = true
+alignment = 0

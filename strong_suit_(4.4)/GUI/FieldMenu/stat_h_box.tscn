@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj75xopcs8key"]
+
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_ay5cd"]
+[ext_resource type="Script" uid="uid://di4ugajt46bej" path="res://GUI/FieldMenu/stat_h_box.gd" id="2_wq2ej"]
+
+[node name="StatHBox" type="Button"]
+custom_minimum_size = Vector2(0, 8)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ay5cd")
+text = "Statname"
+flat = true
+alignment = 0
+script = ExtResource("2_wq2ej")
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 10
+text = "000"

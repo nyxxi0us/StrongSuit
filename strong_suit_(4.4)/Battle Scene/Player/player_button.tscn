@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhtecoltmqfgv"]
+
+[ext_resource type="Texture2D" uid="uid://fhj7j3qyp1a6" path="res://Battle Scene/Art/Party/Ronin.png" id="1_pd222"]
+[ext_resource type="Script" uid="uid://c61k1uwns4yme" path="res://Battle Scene/Player/player_button.gd" id="2_hejxb"]
+
+[sub_resource type="Animation" id="Animation_dr7g3"]
+resource_name = "Highlight"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.470588)]
+}
+
+[sub_resource type="Animation" id="Animation_65qj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nycty"]
+_data = {
+&"Highlight": SubResource("Animation_dr7g3"),
+&"RESET": SubResource("Animation_65qj1")
+}
+
+[node name="PlayerButton" type="TextureButton"]
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("1_pd222")
+stretch_mode = 4
+script = ExtResource("2_hejxb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nycty")
+}

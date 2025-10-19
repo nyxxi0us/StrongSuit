@@ -1,0 +1,256 @@
+[gd_scene load_steps=12 format=3 uid="uid://djmqpjs8elmqy"]
+
+[ext_resource type="PackedScene" uid="uid://1pjkocxmqavc" path="res://GUI/fullscreen_gui_template.tscn" id="1_dd27w"]
+[ext_resource type="Script" uid="uid://bqvk0yht5qxsw" path="res://GUI/FieldMenu/field_menu.gd" id="2_w71oa"]
+[ext_resource type="PackedScene" uid="uid://ct2n8erjfkm7x" path="res://GUI/FieldMenu/player_menu_card.tscn" id="3_2fqgk"]
+[ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="4_0o4t1"]
+[ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="5_0k4wn"]
+[ext_resource type="PackedScene" uid="uid://d0bgknrkpklqu" path="res://GUI/FieldMenu/sub_menu_items.tscn" id="6_1lxaq"]
+[ext_resource type="Script" uid="uid://deyvdmi1i6buq" path="res://World/gold.gd" id="6_j5v2v"]
+[ext_resource type="Script" uid="uid://bjsbbw046n16r" path="res://area.gd" id="7_o5rdq"]
+[ext_resource type="PackedScene" uid="uid://bpo3nionteggq" path="res://GUI/FieldMenu/sub_menu_equip.tscn" id="8_32kvd"]
+[ext_resource type="PackedScene" uid="uid://dkpakmscr0k5s" path="res://GUI/FieldMenu/sub_menu_tricks.tscn" id="9_f61tj"]
+[ext_resource type="PackedScene" uid="uid://x8v5sn3r48ds" path="res://GUI/FieldMenu/sub_menu_status.tscn" id="11_dmmdx"]
+
+[node name="FieldMenu" instance=ExtResource("1_dd27w")]
+script = ExtResource("2_w71oa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PUT_MENU_HERE" index="0"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Party" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer" index="0"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.71
+texture = ExtResource("4_0o4t1")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/Party" index="0"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 13
+
+[node name="PlayerMenuCards" type="VBoxContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/Party/MarginContainer" index="0" node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("5_0k4wn")
+buttons_container = NodePath(".")
+
+[node name="PlayerMenuCard" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/Party/MarginContainer/PlayerMenuCards" index="0" instance=ExtResource("3_2fqgk")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+
+[node name="PlayerMenuCard2" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/Party/MarginContainer/PlayerMenuCards" index="1" instance=ExtResource("3_2fqgk")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="PlayerMenuCard3" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/Party/MarginContainer/PlayerMenuCards" index="2" instance=ExtResource("3_2fqgk")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="PlayerMenuCard4" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/Party/MarginContainer/PlayerMenuCards" index="3" instance=ExtResource("3_2fqgk")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Options" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer" index="0" node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.61
+texture = ExtResource("4_0o4t1")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+script = ExtResource("5_0k4wn")
+buttons_container = NodePath("MarginContainer/VBoxContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="Items" type="Button" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Items"
+flat = true
+
+[node name="Tricks" type="Button" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Tricks"
+flat = true
+
+[node name="Equip" type="Button" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Equip"
+flat = true
+
+[node name="Status" type="Button" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Status"
+flat = true
+
+[node name="Form" type="Button" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Form"
+flat = true
+
+[node name="Config" type="Button" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" index="5"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Config"
+flat = true
+
+[node name="Save" type="Button" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" index="6"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Save"
+flat = true
+
+[node name="Info" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.51
+texture = ExtResource("4_0o4t1")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Gold"
+
+[node name="Gold" type="Label" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+text = "999"
+horizontal_alignment = 2
+script = ExtResource("6_j5v2v")
+
+[node name="Info2" type="NinePatchRect" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.51
+texture = ExtResource("4_0o4t1")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info2/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info2/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Area"
+
+[node name="Area" type="Label" parent="MarginContainer/PUT_MENU_HERE/HBoxContainer/VBoxContainer/Info2/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Plains"
+horizontal_alignment = 2
+script = ExtResource("7_o5rdq")
+
+[node name="SubMenus" type="Control" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubMenuItems" parent="SubMenus" index="0" instance=ExtResource("6_1lxaq")]
+visible = false
+layout_mode = 1
+
+[node name="SubMenuTricks" parent="SubMenus" index="1" instance=ExtResource("9_f61tj")]
+visible = false
+layout_mode = 1
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+
+[node name="SubMenuEquip" parent="SubMenus" index="2" instance=ExtResource("8_32kvd")]
+visible = false
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SubMenuStatus" parent="SubMenus" index="3" instance=ExtResource("11_dmmdx")]
+visible = false
+layout_mode = 1
+
+[node name="FormSpacer" type="Control" parent="SubMenus" index="4"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="closing" from="SubMenus/SubMenuItems" to="." method="_on_sub_menu_closing"]
+[connection signal="item_selected" from="SubMenus/SubMenuItems" to="." method="_on_sub_menu_items_item_selected"]
+[connection signal="closing" from="SubMenus/SubMenuTricks" to="." method="_on_sub_menu_closing"]
+[connection signal="closing" from="SubMenus/SubMenuEquip" to="." method="_on_sub_menu_closing"]
+[connection signal="closing" from="SubMenus/SubMenuStatus" to="." method="_on_sub_menu_closing"]
