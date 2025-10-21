@@ -1,5 +1,5 @@
 # Strong Suit
-<img src="strong_suit_/Battle Scene/Art/Strong Suit Banner.png" alt="Strong Suit Banner"> 
+<img src="strong_suit_main/Battle Scene/Art/Strong Suit Banner.png" alt="Strong Suit Banner" width=100%> 
 <p align="center"><em>A historical-fantasy Roguelite • Deck-based JRPG • Autobattler</em></p>
 
 ---
@@ -65,7 +65,8 @@ Please open issues for bugs, design proposals, or balance reports. Include repro
 
 ## License
 
-- TO-DO
+- This game is made in the Godot Game Engine (<a href="https://godotengine.org/license/" alt="Link to godot's license page">See Here</a>)
+- MIT License
 
 ---
 
