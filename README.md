@@ -1,5 +1,5 @@
 # Strong Suit
-<img src="Strong Suit Banner.png" alt="Strong Suit Banner" width=100%> 
+![Strong Suit Banner](Strong%20Suit%20Banner.png)
 <p align="center"><em>A historical-fantasy Roguelite • Deck-based JRPG • Autobattler</em></p>
 
 ---
