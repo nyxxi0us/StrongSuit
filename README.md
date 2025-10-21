@@ -1,5 +1,5 @@
 # Strong Suit
-<img src="strong_suit_main/Battle Scene/Art/Strong Suit Banner.png" alt="Strong Suit Banner" width=100%> 
+<img src="Strong Suit Banner.png" alt="Strong Suit Banner" width=100%> 
 <p align="center"><em>A historical-fantasy Roguelite • Deck-based JRPG • Autobattler</em></p>
 
 ---
