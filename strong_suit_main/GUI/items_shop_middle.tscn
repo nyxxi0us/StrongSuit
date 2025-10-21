@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://dne8n0xt3lwlp"]
+
+[ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="1_qxtyl"]
+[ext_resource type="Theme" uid="uid://b6c0jw385qavt" path="res://Battle Scene/Menu Assets/Text.tres" id="1_xigxg"]
+[ext_resource type="Script" uid="uid://plpi353s56jf" path="res://Battle Scene/Menu Assets/menu.gd" id="2_xigxg"]
+[ext_resource type="Script" uid="uid://de3xeas1est55" path="res://GUI/items_shop_middle.gd" id="3_ey5uj"]
+[ext_resource type="PackedScene" uid="uid://bkptlvsj7uc71" path="res://GUI/FieldMenu/item_label.tscn" id="3_npsv5"]
+
+[node name="ItemsShopMiddle" type="NinePatchRect"]
+custom_minimum_size = Vector2(304, 105)
+offset_right = 250.0
+offset_bottom = 84.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.81
+theme = ExtResource("1_xigxg")
+texture = ExtResource("1_qxtyl")
+region_rect = Rect2(0, 3, 48, 45)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("3_ey5uj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ItemsMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer" node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("2_xigxg")
+buttons_container = NodePath(".")
+
+[node name="Item" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Item2" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Item3" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Item4" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Item5" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Item6" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Item7" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Item8" parent="MarginContainer/HBoxContainer/ItemsMenu" instance=ExtResource("3_npsv5")]
+layout_mode = 2
+
+[node name="Prices" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Label8" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Label5" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Label6" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Label7" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
+layout_mode = 2
+text = "999"
+
+[node name="Quantities" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="InStock" type="Label" parent="MarginContainer/HBoxContainer/Quantities"]
+layout_mode = 2
+text = "In Stock: None"
+
+[node name="Have" type="Label" parent="MarginContainer/HBoxContainer/Quantities"]
+layout_mode = 2
+text = "Have: None"

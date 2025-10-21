@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://boulntntxjfsm"]
-
-[ext_resource type="Script" uid="uid://4uwvh85bacu6" path="res://Util/screenshake.gd" id="1_sqr3a"]
-
-[node name="Screenshake" type="Node"]
-script = ExtResource("1_sqr3a")

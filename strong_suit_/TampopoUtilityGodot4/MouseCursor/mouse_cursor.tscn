@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://banbi6hxbsxu6"]
-
-[ext_resource type="Texture2D" uid="uid://boql0bn33y32c" path="res://TampopoUtilityGodot4/MouseCursor/mouse_cursor_shaded.png" id="1_qmxc6"]
-
-[node name="MouseCursor" type="Sprite2D"]
-texture = ExtResource("1_qmxc6")
-centered = false
