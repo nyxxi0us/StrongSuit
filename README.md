@@ -65,7 +65,8 @@ Please open issues for bugs, design proposals, or balance reports. Include repro
 
 ## License
 
-- TO-DO
+- This game is made in the Godot Game Engine (<a href="https://godotengine.org/license/" alt="Link to godot's license page">See Here</a>)
+- MIT License
 
 ---
 
