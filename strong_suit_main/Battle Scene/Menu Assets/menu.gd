@@ -48,7 +48,7 @@ func _ready() -> void:
 				var top_row: Array = []
 				var bottom_row: Array = []
 				var cols: int = self.columns
-				var rows: int = roundi(buttons.size() / cols) # TODO make sure this roundi() (instead of round()) does not break it
+				var rows: int = roundi(float(buttons.size()) / cols) # TODO make sure this roundi() (instead of round()) does not break it
 				var btm_range: Array = [rows * cols - cols, rows * cols - 1]
 		#		var btm_range: Array = [rows * (cols - 1) + 1, rows * cols]
 

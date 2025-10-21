@@ -121,40 +121,41 @@ text = "Lv. 1"
 layout_mode = 2
 text = "Lv. 1"
 
-[node name="Price" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Prices" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 6
+size_flags_vertical = 4
 alignment = 1
 
-[node name="Price1Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price1Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 
-[node name="Price2Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price2Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 
-[node name="Price3Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price3Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 
-[node name="Price4Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price4Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 
-[node name="Price5Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price5Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 
-[node name="Price6Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price6Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 
-[node name="Price7Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price7Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 
-[node name="Price8Label" type="Label" parent="MarginContainer/HBoxContainer/Price"]
+[node name="Price8Label" type="Label" parent="MarginContainer/HBoxContainer/Prices"]
 layout_mode = 2
 text = "999"
 

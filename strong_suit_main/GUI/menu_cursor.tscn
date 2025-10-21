@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvv1nbodycp04"]
 
 [ext_resource type="Texture2D" uid="uid://diol0iobei88n" path="res://Battle Scene/Art/Poker_chip.png" id="1_wbb1f"]
-[ext_resource type="Script" uid="uid://ixatvnvse5k0" path="res://TampopoUtilityGodot4/menu_cursor.gd" id="2_wbb1f"]
+[ext_resource type="Script" uid="uid://ixatvnvse5k0" path="res://GUI/menu_cursor.gd" id="2_wbb1f"]
 
 [node name="MenuCursor" type="TextureRect"]
 offset_right = 16.0

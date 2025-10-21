@@ -44,6 +44,7 @@ var learned_spells: Array = []
 var prepared_spells: Array = []
 var castable_elements: Array = []
 
+# warning-ignore:integer_division
 func _init(_stamina: int = stamina, _power: int = power, _def: int = defense, _speed: int = speed, _lvl: int = level) -> void:
 	power = _power
 	defense = _def
@@ -51,6 +52,7 @@ func _init(_stamina: int = stamina, _power: int = power, _def: int = defense, _s
 	stamina = _stamina
 	level = _lvl
 	attack = power * level
+	# warning-ignore:integer_division
 	hp_max = stamina * level
 	accuracy = round((speed / defense) * level) if speed > defense else round((defense / speed) * level)
 	intellect = round((power + defense + speed) * level/3)
@@ -87,6 +89,7 @@ func set_name_custom(value: String) -> void:
 			castable_elements = [ELEMENTS.EARTH, ELEMENTS.AIR]
 
 func get_defense(with_armor_rating: bool) -> int:
+	# warning-ignore:integer_division
 	var value: int = defense
 	if with_armor_rating:
 		for item in cards:
@@ -101,6 +104,7 @@ func healhurt(value: int) -> int:
 	if value < 0:
 		var spread: float = 0.2
 		if is_standing:
+			# warning-ignore:integer_division
 			value *= 0.4 + randf_range(-spread,spread)
 	
 	hp = clampi(hp + value, 0, hp_max)
@@ -121,9 +125,11 @@ func change_fm(value: int) -> int:
 	return change
 
 func speed_roll() -> int:
+	# warning-ignore:integer_division
 	return Math.add_with_random_spreadi(speed, 4)
 
 func damage_roll() -> int:
+	# warning-ignore:integer_division
 	return -Math.add_with_random_spreadf(power, 0.25)
 
 func stand() -> void:
@@ -218,6 +224,7 @@ func equip(item: Item, slot: int) -> void:
 
 func duplicate_custom() -> BattleActor:
 	var dup: BattleActor = self.duplicate()
+	# warning-ignore:integer_division
 	dup._init(hp_max,power,defense,speed,level)
 	dup.name = name
 	dup.texture = texture

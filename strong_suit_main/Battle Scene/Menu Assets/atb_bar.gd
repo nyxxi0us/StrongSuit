@@ -18,7 +18,7 @@ func reset() -> void:
 func stop()-> void:
 	set_process(false)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	value += SPEED_BASE
 	
 	if is_equal_approx(value, max_value):

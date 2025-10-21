@@ -7,9 +7,10 @@ class_name Shopkeep extends Actor
 
 func _ready() -> void:
 	shop_gui.set_inventory(inventory)
-	if inventory_index > 3:
+	if inventory_index > 2:
 		is_spell_shop = true
 	shop_gui.spell_shop_middle.visible = is_spell_shop
+	shop_gui.items_shop_middle.visible = !is_spell_shop
 
 func open(on: bool) -> void:
 	shop_gui.enable(on)

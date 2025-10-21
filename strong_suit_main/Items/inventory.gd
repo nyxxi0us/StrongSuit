@@ -6,6 +6,7 @@ enum {
 	DEALER,
 	SMITH,
 	MYSTIC,
+	LIBRARIAN,
 	PLAYER
 }
 
@@ -13,9 +14,9 @@ var item_lists: Dictionary[int,Array] = {
 	DEALER: [["Dice", "Chip", "Rand. Card"],[2,3,1]],
 	SMITH: [["Rand. Card", "Notch", "Rand. Wnd. Card", "Rand. Whl. Card", "Rand. Mrr. Card", "Rand. Dgr. Card"],[3,3,2,2,2,2]],
 	MYSTIC: [["Tarot Reading"],[3]],
+	LIBRARIAN: [["Tome of Spark", "Tome of Focus", "Tome of Stitch", "Tome of Prayer"],[1,1,1,1]],
 	PLAYER: [["Notch", "Sleeve", "Foil"],[2,4,3]]
 }
-
 var items: Array[Item] = []
 var type: int = -1
 

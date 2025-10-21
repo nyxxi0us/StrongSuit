@@ -10,5 +10,5 @@ func _ready() -> void:
 func _on_options_button_focused(button: BaseButton) -> void:
 	super(button)
 
-func _on_options_button_pressed(button: Button) -> void:
+func _on_options_button_pressed(_button: Button) -> void:
 	pass

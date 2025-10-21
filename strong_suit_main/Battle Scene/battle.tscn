@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bn204mt4pwb7i" path="res://Battle Scene/Enemies/enemy_button.tscn" id="11_6rkja"]
 [ext_resource type="Texture2D" uid="uid://kmhhevuxuqq3" path="res://Battle Scene/Art/Map-ninepatch.png" id="14_rk5ss"]
 [ext_resource type="PackedScene" uid="uid://c61vpv00601s4" path="res://Battle Scene/Menu Assets/dialogue_box.tscn" id="15_c0gu4"]
-[ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://TampopoUtilityGodot4/menu_cursor.tscn" id="16_eupq3"]
+[ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://GUI/menu_cursor.tscn" id="16_eupq3"]
 [ext_resource type="PackedScene" uid="uid://bxc68pcbomkcl" path="res://Battle Scene/Menu Assets/down_cursor.tscn" id="17_o6ygu"]
 [ext_resource type="PackedScene" uid="uid://boulntntxjfsm" path="res://Util/screenshake.tscn" id="18_n5o86"]
 

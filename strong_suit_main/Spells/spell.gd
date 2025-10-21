@@ -91,7 +91,7 @@ func _init(_lvl: int = level, _cost: int = cost, _element: int = element, _type:
 					power = cost * 2
 
 func get_type() -> Types:
-	return type
+	return type as Types
 
 func set_name_custom(_name: String) -> void:
 	name = _name

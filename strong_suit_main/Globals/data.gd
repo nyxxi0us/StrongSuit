@@ -179,9 +179,9 @@ var cards: Dictionary = {
 }
 
 var items: Dictionary = {
-	"Notch":            Item.new(ITEM_TYPES.UPGRADE, STATS.SPEED, 15, RARITIES.BASIC,     "Makes a slot quick as a flash!"),
+	"Notch":            Item.new(ITEM_TYPES.UPGRADE, STATS.SPEED, 15, RARITIES.BASIC,       "Makes a slot quick as a flash!"),
 	"Sleeve":           Item.new(ITEM_TYPES.UPGRADE, STATS.DEFENSE, 15, RARITIES.BASIC,     "Makes a slot more protective. Shiny!"),
-	"Foil":             Item.new(ITEM_TYPES.UPGRADE, STATS.POWER, 15, RARITIES.BASIC,     "Makes a slot pack some power!"),
+	"Foil":             Item.new(ITEM_TYPES.UPGRADE, STATS.POWER, 15, RARITIES.BASIC,       "Makes a slot pack some power!"),
 	"Dice":             Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 5, RARITIES.BASIC,   "Roll the dice! Use: 1 Encounter"),
 	"Chip":             Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 20, RARITIES.BASIC,  "Up the stakes! Use: All DMG++"),
 	"Tarot Reading":    Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 30, RARITIES.COMMON, "Peer past the veil... "),
@@ -190,6 +190,15 @@ var items: Dictionary = {
 	"Rand. Dgr. Card":  Item.new(ITEM_TYPES.CARD, STATS.NO_STAT, 20, RARITIES.COMMON,       "Adds a random dagger card to deck"),
 	"Rand. Mrr. Card":  Item.new(ITEM_TYPES.CARD, STATS.NO_STAT, 20, RARITIES.COMMON,       "Adds a random mirror card to deck"),
 	"Rand. Whl. Card":  Item.new(ITEM_TYPES.CARD, STATS.NO_STAT, 20, RARITIES.COMMON,       "Adds a random wheel card to deck"),
+	"Tome of Spark":    Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Deals fire damage to one enemy!"),
+	"Tome of Zap":      Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Deals lightn. damage to one enemy!"),
+	"Tome of Focus":    Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Makes one enemy easier to hit!"),
+	"Tome of Sleep":    Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Puts all enemies to sleep!"),
+	"Tome of Stitch":   Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Heals one ally!"),
+	"Tome of Shield":   Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Raise one ally's defense!"),
+	"Tome of Prayer":   Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Damages any undead enemies!"),
+	"Tome of Blink":    Item.new(ITEM_TYPES.CONSUMABLE, STATS.NO_STAT, 100, RARITIES.COMMON,"Raise own evasion greatly!"),
+	
 }
 
 var inventories: Array[Inventory] = []
@@ -221,5 +230,6 @@ func _ready() -> void:
 	inventories = [
 	Inventory.new(Inventory.DEALER),
 	Inventory.new(Inventory.MYSTIC),
-	Inventory.new(Inventory.SMITH)
+	Inventory.new(Inventory.SMITH),
+	Inventory.new(Inventory.LIBRARIAN)
 	]
